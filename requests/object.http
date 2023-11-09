@@ -1,0 +1,168 @@
+### Get 10 last object
+GET {{baseUrl}}/objects/lastoffers
+
+### Get all the object
+GET {{baseUrl}}/objects/offers
+Authorization: {{jamesToken}}
+
+### Get all canceled objects
+GET {{baseUrl}}/objects/canceledOffers
+Authorization: {{jamesToken}}
+
+### Get all the object
+GET {{baseUrl}}/objects/getAllTypes
+
+### Get a specific offer
+GET {{baseUrl}}/objects/2
+
+### Accept a user
+POST {{baseUrl}}/objects/interrested
+Content-Type: application/json
+
+{
+  "idUsername": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhdXRoMCIsImV4cCI6MTY0ODQ2MjU5MSwidXNlciI6OH0.uyWKcfp91aDSD8JuYo56Fil6XehOj1NMZ-2w6IuT06Q",
+  "idObject": 1,
+  "plageHorraire": "lundi et mardi"
+}
+
+### Get objects of Theo
+POST {{baseUrl}}/objects/myObjects
+Content-Type: application/json
+
+{
+  "teken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhdXRoMCIsImV4cCI6MTY0OTQxNDY1MSwidXNlciI6N30.hYF6IwVOJVaqe3sHKKziI6NJ-iuzeQfHjO_NXHHZ6b4"
+}
+
+### Cancel Offer
+POST {{baseUrl}}/objects/cancelOffer
+Content-Type: application/json
+
+{
+  "idObject": "14"
+}
+
+### Create Object
+POST {{baseUrl}}/objects/createObject
+Content-Type: application/json
+
+{
+  "taken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhdXRoMCIsImV4cCI6MTY1MDgwNTI2OCwidXNlciI6NX0.f77PkKywycYF1UE5xOhpL3k9a8AfSnGiZSkYvNLzMx0",
+  "offer_name": "baguette",
+  "description": "miam miam",
+  "type": "Jouets",
+  "date": "Du lundi au dimanche",
+  "image": "http/photo"
+}
+
+### Create Type
+POST {{baseUrl}}/objects/createType
+Content-Type: application/json
+
+{
+  "tuken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhdXRoMCIsImV4cCI6MTY0ODU3NDkxOSwidXNlciI6MX0.de49FhQthZLFLPHJPZIekjljGktAKeCrV0fCdatCmu4",
+  "typeName": "voiture"
+}
+
+### Login with default user credentials
+POST {{baseUrl}}/users/login
+Content-Type: application/json
+
+{
+  "username": "test",
+  "password": "test"
+}
+
+> {%
+client.global.set("jamesToken", response.body.token);
+%}
+
+### add Interest
+POST {{baseUrl}}/objects/interrested
+Content-Type: application/json
+Authorization: {{jameToken}}
+
+{
+  "idObject": 4,
+  "idUsername": 7,
+  "plageHorraire": "le lundi du lol",
+  "boolConversation": true,
+  "phoneNumber": "007"
+}
+
+### Add Object as interrested
+POST {{baseUrl}}/objects/interrested
+Content-Type: application/json
+
+{
+  "idObject": 2,
+  "idUsername": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhdXRoMCIsImV4cCI6MTY0OTQ5MTg1NywidXNlciI6NX0.eCqLoQd2htDdFfAs0bkM4mWmxWa0ibGkZqbkn0mf0ZM",
+  "plageHorraire": "Du dimanche au samedi 18h",
+  "boolConversation": true,
+  "phoneNumber": "007"
+}
+
+### Add Object as interrested
+POST {{baseUrl}}/objects/editObject
+Content-Type: application/json
+
+{
+  "idObject": 6,
+  "date": "Du dimanche au samedi 18h",
+  "description": "6677"
+}
+
+### Add recipient to an object
+POST {{baseUrl}}/objects/addRecipient
+Content-Type: application/json
+
+{
+  "idObject": 3,
+  "idRecipient": 5
+}
+
+### re Offer Object
+POST {{baseUrl}}/objects/reOffer
+Content-Type: application/json
+
+{
+  "idObject": "5"
+}
+
+### Indicate object as donated
+POST {{baseUrl}}/objects/indicateObjectDonated
+Content-Type: application/json
+
+{
+  "idObject": "6"
+}
+
+
+### Indicate object as donated
+GET {{baseUrl}}/objects/searchObject?search=
+Content-Type: application/json
+
+
+### get the photo
+GET {{baseUrl}}/objects/picture/25
+
+### get my objects recipient
+POST {{baseUrl}}/objects/myObjectsRecipient
+Content-Type: application/json
+Authorization: {{jamesToken}}
+
+{
+  "received": false
+}
+
+### get my objects recipient
+POST {{baseUrl}}/objects/evaluateObject
+Content-Type: application/json
+Authorization: {{jamesToken}}
+
+{
+  "idObject": 4,
+  "starRate": 5,
+  "remark": "commentaire"
+}
+
+

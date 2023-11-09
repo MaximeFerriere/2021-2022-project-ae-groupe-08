@@ -1,0 +1,43 @@
+
+### Login with default user credentials
+POST {{baseUrl}}/users/login
+Content-Type: application/json
+
+{
+  "username": "test",
+  "password": "tes"
+}
+
+### Login with wrong user credentials
+POST {{baseUrl}}/users/login
+Content-Type: application/json
+
+{
+  "username": "test2",
+  "password": "te"
+}
+
+### Register with correct info
+PUT {{baseUrl}}/users/register
+Content-Type: application/json
+
+{
+  "username": "test",
+  "password": "test",
+  "firstname": "Jerome",
+  "lastname": "Devaux",
+  "street": "C la rue",
+  "building_number": 1,
+  "unit_number": 2,
+  "postcode": 5030,
+  "commune": "Gembloux",
+  "callNumber": ""
+}
+
+#### Get waiting List
+GET {{baseUrl}}/users/waitingList
+Content-Type: application/json
+
+
+
+

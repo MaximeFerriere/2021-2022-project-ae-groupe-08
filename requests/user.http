@@ -1,0 +1,63 @@
+
+### Login with default user credentials
+POST {{baseUrl}}/users/isAdmin
+Content-Type: application/json
+
+{
+  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhdXRoMCIsImV4cCI6MTY0ODA2MzExNiwidXNlciI6MTR9.qZLWTrPetNfYOsQyhayqSBwQYc-tsSPi620nQEcGL-U"
+}
+
+
+### check token
+POST {{baseUrl}}/users/checkToken
+Content-Type: application/json
+
+{
+  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhdXRoMCIsImV4cCMTY1MDc5NjA5MCwidXNlciI6NX0.0uHxAB-CdsQaffUswaIkM6yJ44wtTa-AiIxRKZYd4fo"
+}
+
+### add an admin
+POST {{baseUrl}}/users/AddAnAdmin
+Content-Type: application/json
+
+{
+  "username": "test14"
+}
+
+### get list of interested members by an object
+POST {{baseUrl}}/users/interestedMembers
+Content-Type: application/json
+
+{
+  "idObject": 2
+}
+
+### get list of interested members by an object
+POST {{baseUrl}}/users/profile
+Content-Type: application/json
+
+{
+  "username": "test"
+}
+
+### edit Profile
+POST {{baseUrl}}/users/editprofile
+Content-Type: application/json
+
+{
+  "idAdress": 6,
+  "idMember": 6,
+  "call_number": "null",
+  "username": "JUL",
+  "firstname": "Jerome",
+  "lastname": "Devaux",
+  "street": "Rue des r",
+  "building_number": 1,
+  "unit_number": 2,
+  "postcode": 5030,
+  "commune": "Gembloux"
+}
+
+### search member
+GET {{baseUrl}}/users/searchMember?search=te
+Content-Type: application/json

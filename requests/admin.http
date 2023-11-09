@@ -1,0 +1,66 @@
+
+### confirm inscription
+POST {{baseUrl}}/users/login
+Content-Type: application/json
+
+{
+  "username": "test",
+  "password": "test"
+}
+
+### Login with wrong user credentials
+POST {{baseUrl}}/users/login
+Content-Type: application/json
+
+{
+  "username": "test2",
+  "password": "test"
+}
+
+### Accept a user
+POST {{baseUrl}}/users/accept
+Content-Type: application/json
+Authorization: {{jamesToken}}
+
+{
+  "username": "test3"
+}
+
+
+
+### put a user in Admin
+POST {{baseUrl}}/users/AddAnAdmin
+Content-Type: application/json
+Authorization: {{jamesToken}}
+
+{
+  "username": "test2"
+}
+
+### refuse a user
+POST {{baseUrl}}/users/refuse
+Content-Type: application/json
+Authorization: {{jamesToken}}
+
+{
+  "username": "test3",
+  "reason_for_connection_refusal": "Vous êtes banni"
+}
+
+### get all waiting users
+GET {{baseUrl}}/users/waitingList?type-list=waiting
+Authorization: {{jamesToken}}
+
+### get all deniedList users
+GET {{baseUrl}}/users/waitingList?type-list=valid
+Authorization: {{jamesToken}}
+
+### get all stats members
+POST {{baseUrl}}/users/memberStatsOffers
+Content-Type: application/json
+Authorization: {{jamesToken}}
+
+{
+  "username": "jerome"
+}
+
